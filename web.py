@@ -9,7 +9,8 @@ def index():
 	resturants = None
 	if address:
 		resturants = yelp_api.get_businesses(address)
-	return render_template('index.html', resturants=resturants)
+		address = address
+	return render_template('index.html', resturants=resturants, address=address)
 
 @app.route('/about')
 def about():

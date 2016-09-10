@@ -6,7 +6,33 @@
 			<div class = "jumbotron">	
 				<div class = "container">
 					{% if resturants %}
-						<h1>  {{ resturants }} </h1>
+					<h2>  The top three resturants for {{ address }} are: </h1>
+					<div class="row">
+					  <div class="col-md-4">
+					  	<div class="row">
+					  	{{ resturants[0]["name"] }}
+					  	</div>
+					  	<div class="row">
+					  		<img src = {{ resturants[0]["image"] }} >
+					  	</div>
+					  </div>	
+					  <div class="col-md-4">
+					  	<div class="row">
+					  	{{ resturants[1]["name"] }}
+					  	</div>
+					  	<div class="row">
+					  		<img src = {{ resturants[1]["image"] }} >
+					  	</div>
+					  </div>
+					  <div class="col-md-4">
+					  	<div class="row">
+					  	{{ resturants[2]["name"] }}
+					  	</div>
+					  	<div class="row">
+					  		<img src = {{ resturants[2]["image"] }} >
+					  	</div>
+					  </div>
+					</div>
 						<a href ="{{ url_for('index') }}"> Look up another address </a>
 					{% else %}
 						<h1> Where would you like Resturant Recommendations? </h1>
@@ -17,8 +43,10 @@
 							<input type="submit" value="Submit" class="btn btn-primary">
 						</form>
 					{% endif %}
-					<a href="{{ url_for('about') }}"> About Us
-					</a>
+					<div class="row">
+						<a href="{{ url_for('about') }}"> About Us
+						</a>
+					</div>
 				</div>
 			</div>
 		</body>

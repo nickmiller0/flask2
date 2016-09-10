@@ -19,7 +19,8 @@ def get_businesses(address):
 
 	params = {
     	'term': "food",
-    	'lang': 'en' 
+    	'lang': 'en',
+    	'limit': '3'
     	}
 
 	response = client.search(address, **params)
@@ -30,11 +31,12 @@ def get_businesses(address):
 		# print(business.name, business.rating, business.phone)
 		businesses.append({"name": business.name, 
 			"rating": business.rating, 
-			"phone": business.phone
+			"phone": business.phone,
+			"image": business.image_url
 		})
 	
-	return("The top 3 recommended resturants for {}, are: {}, {}, and {}".format(address, businesses[0]['name'], 
-		businesses[1]['name'], businesses[2]['name']))
+	#return("The top 3 recommended resturants for {}, are: {}, {}, and {}".format(address, businesses[0]['name'], 
+		#businesses[1]['name'], businesses[2]['name']))
 
 	return businesses
 
