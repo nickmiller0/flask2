@@ -5,8 +5,8 @@
 		<body>
 			<div class = "jumbotron">	
 				<div class = "container">
-					{% if forecast %}
-						<h1>  {{ forecast }} </h1>
+					{% if resturants %}
+						<h1>  {{ resturants }} </h1>
 						<a href ="{{ url_for('index') }}"> Look up another address </a>
 					{% else %}
 						<h1> Hello, where do you live?</h1>

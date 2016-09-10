@@ -1,15 +1,15 @@
 from flask import Flask, render_template, request
 app = Flask(__name__)
 import os
-import weather
+import yelp_api
 
 @app.route("/")
 def index():
 	address = request.values.get('address')
-	forecast = None
+	resturants = None
 	if address:
-		forecast = weather.get_weather(address)
-	return render_template('index.html', forecast=forecast)
+		resturants = yelp_api.get_businesses(address)
+	return render_template('index.html', resturants=resturants)
 
 @app.route('/about')
 def about():
