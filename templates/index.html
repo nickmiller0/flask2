@@ -3,37 +3,52 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
 	</head>
 		<body>
-			<div class = "jumbotron">	
-				<div class = "container">
+			<div class = "jumbotron" >	
+				<div class = "container" padding-top="35px">
 					{% if resturants %}
-					<h2>  The top three resturants for {{ address }} are: </h1>
+					<h3>  The first three recommend resturants for {{ address }} are: </h3>
 					<div class="row">
-					  <div class="col-md-4">
-					  	<div class="row">
-					  	{{ resturants[0]["name"] }}
-					  	</div>
-					  	<div class="row">
-					  		<img src = {{ resturants[0]["image"] }} >
-					  	</div>
+					  <div class="col-md-4" style= "background:#e0e0eb !important" border>
+					  	<div class="col-md-12">
+						  	<div class="row" align="center">
+						  	<h5> {{ resturants[0]["name"] }} </h5>
+						  	</div>
+						  	<div class="row" align="center">
+						  		<img src = {{ resturants[0]["image"] }} > 
+						  		<br> 
+						  		<img src = {{ resturants[0]["stars"] }} >
+						  	</div>
+						 </div>
 					  </div>	
-					  <div class="col-md-4">
-					  	<div class="row">
-					  	{{ resturants[1]["name"] }}
-					  	</div>
-					  	<div class="row">
-					  		<img src = {{ resturants[1]["image"] }} >
-					  	</div>
-					  </div>
-					  <div class="col-md-4">
-					  	<div class="row">
-					  	{{ resturants[2]["name"] }}
-					  	</div>
-					  	<div class="row">
-					  		<img src = {{ resturants[2]["image"] }} >
+					  <div class="col-md-4" style= "background:#efeff5 !important" >
+					  	<div class="col-md-12">
+						  	<div class="row" align="center">
+						  	<h5> {{ resturants[1]["name"] }} </h5>
+						  	</div>
+						  	<div class="row" align="center">
+						  		<img src = {{ resturants[1]["image"] }} > 
+						  		<br> 
+						  		<img src = {{ resturants[1]["stars"] }} >
+						  	</div>
 					  	</div>
 					  </div>
+					  <div class="col-md-4" style= "background:#e0e0eb !important" border>
+					  	<div class="col-md-12">
+						  	<div class="row" align="center">
+						  	<h5> {{ resturants[2]["name"] }} </h5>
+						  	</div>
+						  	<div class="row" align="center">
+						  		<img src = {{ resturants[2]["image"] }} > 
+						  		<br> 
+						  		<img src = {{ resturants[2]["stars"] }} >
+						  	</div>
+						  </div>
+						</div>
 					</div>
+					</div>
+					<div class="container" padding-top="25px">
 						<a href ="{{ url_for('index') }}"> Look up another address </a>
+					</div>
 					{% else %}
 						<h1> Where would you like resturant Recommendations? </h1>
 						<form action="/" class="form-inline">
@@ -43,7 +58,7 @@
 							<input type="submit" value="Submit" class="btn btn-primary">
 						</form>
 					{% endif %}
-					<div class="row">
+					<div class="container" padding-top="15px">
 						<a href="{{ url_for('about') }}"> About Us
 						</a>
 					</div>

@@ -32,7 +32,8 @@ def get_businesses(address):
 		businesses.append({"name": business.name, 
 			"rating": business.rating, 
 			"phone": business.phone,
-			"image": business.image_url
+			"image": business.image_url,
+			"stars": business.rating_img_url
 		})
 	
 	#return("The top 3 recommended resturants for {}, are: {}, {}, and {}".format(address, businesses[0]['name'], 
