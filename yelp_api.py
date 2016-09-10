@@ -33,7 +33,7 @@ def get_businesses(address):
 			"phone": business.phone
 		})
 	
-	return("The top 3 resturant are {}, {}, and {}".format(businesses[0]['name'], 
+	return("The top 3 recommended resturants for {}, are: {}, {}, and {}".format(address, businesses[0]['name'], 
 		businesses[1]['name'], businesses[2]['name']))
 
 	return businesses
